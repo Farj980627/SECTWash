@@ -23,23 +23,51 @@ Partial Class Home
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblPrecio = New System.Windows.Forms.Label()
+        Me.btnVender = New System.Windows.Forms.Button()
+        Me.cbPaquetes = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnAdministrador = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.ComboBox1)
+        Me.Panel1.Controls.Add(Me.btnAdministrador)
+        Me.Panel1.Controls.Add(Me.lblPrecio)
+        Me.Panel1.Controls.Add(Me.btnVender)
+        Me.Panel1.Controls.Add(Me.cbPaquetes)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1287, 662)
         Me.Panel1.TabIndex = 0
+        '
+        'lblPrecio
+        '
+        Me.lblPrecio.AutoSize = True
+        Me.lblPrecio.Location = New System.Drawing.Point(559, 48)
+        Me.lblPrecio.Name = "lblPrecio"
+        Me.lblPrecio.Size = New System.Drawing.Size(65, 17)
+        Me.lblPrecio.TabIndex = 3
+        Me.lblPrecio.Text = "precio D:"
+        '
+        'btnVender
+        '
+        Me.btnVender.Location = New System.Drawing.Point(562, 125)
+        Me.btnVender.Name = "btnVender"
+        Me.btnVender.Size = New System.Drawing.Size(107, 31)
+        Me.btnVender.TabIndex = 2
+        Me.btnVender.Text = "Vender"
+        Me.btnVender.UseVisualStyleBackColor = True
+        '
+        'cbPaquetes
+        '
+        Me.cbPaquetes.FormattingEnabled = True
+        Me.cbPaquetes.Location = New System.Drawing.Point(92, 41)
+        Me.cbPaquetes.Name = "cbPaquetes"
+        Me.cbPaquetes.Size = New System.Drawing.Size(229, 24)
+        Me.cbPaquetes.TabIndex = 1
         '
         'Label1
         '
@@ -50,31 +78,14 @@ Partial Class Home
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Paquete: "
         '
-        'ComboBox1
+        'btnAdministrador
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(92, 41)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(229, 24)
-        Me.ComboBox1.TabIndex = 1
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(562, 125)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(107, 31)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Vender"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(559, 48)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(65, 17)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "precio D:"
+        Me.btnAdministrador.Location = New System.Drawing.Point(1125, 14)
+        Me.btnAdministrador.Name = "btnAdministrador"
+        Me.btnAdministrador.Size = New System.Drawing.Size(137, 51)
+        Me.btnAdministrador.TabIndex = 4
+        Me.btnAdministrador.Text = "Configuraciones Avanzadas"
+        Me.btnAdministrador.UseVisualStyleBackColor = True
         '
         'Home
         '
@@ -91,8 +102,9 @@ Partial Class Home
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents lblPrecio As Label
+    Friend WithEvents btnVender As Button
+    Friend WithEvents cbPaquetes As ComboBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents btnAdministrador As Button
 End Class
