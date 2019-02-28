@@ -82,4 +82,32 @@ Public Class conexiones
         cmd.ExecuteNonQuery()
         con.Close()
     End Sub
+    'Guardar venta
+    Public Shared Sub Venta(pusuario, ppaquete, ptotal)
+        Dim con As MySqlConnection = conexiones.conection
+        Dim fecha As String = DateTime.Now.ToString("yyyy-MM-dd HH:mm")
+        Dim cmd As MySqlCommand = New MySqlCommand(String.Format("insert into ventas(usuario,paquete,fecha,total) values('" + pusuario + "','" + ppaquete + "','" + fecha + "', '" + ptotal + "') "), con)
+        cmd.ExecuteNonQuery()
+        con.Close()
+    End Sub
+    'Obtener ventas
+    Public Shared Function getVentas() As DataTable
+        Dim con As MySqlConnection = conexiones.conection
+        Dim dt As New DataTable
+        Dim cmd As MySqlCommand = New MySqlCommand(String.Format("Select * from ventas"), con)
+        Dim adap As New MySqlDataAdapter(cmd)
+        adap.Fill(dt)
+        con.Close()
+        Return dt
+    End Function
+    'Buscar Ventas
+    Public Shared Function buscarFechas(fechaInicio, fechaFin) As DataTable
+        Dim con As MySqlConnection = conexiones.conection
+        Dim dt As New DataTable
+        Dim cmd As MySqlCommand = New MySqlCommand(String.Format("Select * from ventas where fecha >='{0}' and fecha <='{1}'", fechaInicio, fechaFin), con)
+        Dim adap As New MySqlDataAdapter(cmd)
+        adap.Fill(dt)
+        con.Close()
+        Return dt
+    End Function
 End Class

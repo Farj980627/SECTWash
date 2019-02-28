@@ -44,6 +44,12 @@ Partial Class Administrador
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cbDelPaquete = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Reportes = New System.Windows.Forms.TabPage()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.dtpFin = New System.Windows.Forms.DateTimePicker()
+        Me.dtpInicio = New System.Windows.Forms.DateTimePicker()
+        Me.dgvVentas = New System.Windows.Forms.DataGridView()
+        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.gpPaquetes.SuspendLayout()
@@ -51,6 +57,8 @@ Partial Class Administrador
         Me.GroupBox1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.Reportes.SuspendLayout()
+        CType(Me.dgvVentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -58,6 +66,7 @@ Partial Class Administrador
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Controls.Add(Me.Reportes)
         Me.TabControl1.Location = New System.Drawing.Point(12, 12)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -264,6 +273,62 @@ Partial Class Administrador
         Me.Button1.Text = "Borrar"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Reportes
+        '
+        Me.Reportes.Controls.Add(Me.btnGuardar)
+        Me.Reportes.Controls.Add(Me.Button2)
+        Me.Reportes.Controls.Add(Me.dtpFin)
+        Me.Reportes.Controls.Add(Me.dtpInicio)
+        Me.Reportes.Controls.Add(Me.dgvVentas)
+        Me.Reportes.Location = New System.Drawing.Point(4, 25)
+        Me.Reportes.Name = "Reportes"
+        Me.Reportes.Padding = New System.Windows.Forms.Padding(3)
+        Me.Reportes.Size = New System.Drawing.Size(1137, 625)
+        Me.Reportes.TabIndex = 3
+        Me.Reportes.Text = "Reporte de Ventas"
+        Me.Reportes.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(381, 579)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(165, 35)
+        Me.Button2.TabIndex = 3
+        Me.Button2.Text = "Buscar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'dtpFin
+        '
+        Me.dtpFin.Location = New System.Drawing.Point(824, 498)
+        Me.dtpFin.Name = "dtpFin"
+        Me.dtpFin.Size = New System.Drawing.Size(200, 22)
+        Me.dtpFin.TabIndex = 2
+        '
+        'dtpInicio
+        '
+        Me.dtpInicio.Location = New System.Drawing.Point(93, 498)
+        Me.dtpInicio.Name = "dtpInicio"
+        Me.dtpInicio.Size = New System.Drawing.Size(200, 22)
+        Me.dtpInicio.TabIndex = 1
+        '
+        'dgvVentas
+        '
+        Me.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvVentas.Location = New System.Drawing.Point(6, 6)
+        Me.dgvVentas.Name = "dgvVentas"
+        Me.dgvVentas.RowTemplate.Height = 24
+        Me.dgvVentas.Size = New System.Drawing.Size(1125, 443)
+        Me.dgvVentas.TabIndex = 0
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.Location = New System.Drawing.Point(859, 579)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(165, 35)
+        Me.btnGuardar.TabIndex = 4
+        Me.btnGuardar.Text = "Guardar PDF"
+        Me.btnGuardar.UseVisualStyleBackColor = True
+        '
         'Administrador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -282,6 +347,8 @@ Partial Class Administrador
         Me.TabPage3.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.Reportes.ResumeLayout(False)
+        CType(Me.dgvVentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -308,4 +375,10 @@ Partial Class Administrador
     Friend WithEvents Label3 As Label
     Friend WithEvents cbDelPaquete As ComboBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents Reportes As TabPage
+    Friend WithEvents dgvVentas As DataGridView
+    Friend WithEvents dtpFin As DateTimePicker
+    Friend WithEvents dtpInicio As DateTimePicker
+    Friend WithEvents Button2 As Button
+    Friend WithEvents btnGuardar As Button
 End Class

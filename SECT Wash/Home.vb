@@ -1,5 +1,5 @@
 ﻿Public Class Home
-    Public Shared usuario, total As String
+    Public Shared usuario, total, paquete As String
     Private Sub Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cbPaquetes.DataSource = conexiones.getPaquetes
         cbPaquetes.DisplayMember = "nombre"
@@ -12,6 +12,7 @@
 
     Private Sub btnVender_Click(sender As Object, e As EventArgs) Handles btnVender.Click
         total = lblPrecio.Text
+        paquete = cbPaquetes.Text
         Cobrar.ShowDialog()
 
     End Sub

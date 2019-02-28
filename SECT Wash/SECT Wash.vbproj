@@ -48,6 +48,15 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\ExcelToDataGV\ExcelToDataGV\bin\Debug\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\..\ExcelToDataGV\ExcelToDataGV\bin\Debug\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="LibPrintTicket">
+      <HintPath>..\..\..\..\..\Downloads\LibPrintTicket\LibPrintTicket\Release\LibPrintTicket.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data">
       <HintPath>..\..\ExcelToDataGV\ExcelToDataGV\bin\Debug\MySql.Data.dll</HintPath>
     </Reference>
