@@ -22,6 +22,7 @@
         cbPaquetes.DataSource = conexiones.getPaquetes
         cbPaquetes.DisplayMember = "nombre"
         lblPrecio.Text = conexiones.getPrecio(cbPaquetes.Text)
+
     End Sub
 
     Private Sub txtVarios_TextChanged(sender As Object, e As EventArgs) Handles txtVarios.TextChanged
@@ -47,6 +48,7 @@
             MsgBox("El usuario no tiene permitida esta funcion")
         Else
             Administrador.Show()
+            txtVarios.Text = ""
             Me.Hide()
         End If
     End Sub
