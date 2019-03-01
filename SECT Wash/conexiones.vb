@@ -83,10 +83,10 @@ Public Class conexiones
         con.Close()
     End Sub
     'Guardar venta
-    Public Shared Sub Venta(pusuario, ppaquete, ptotal)
+    Public Shared Sub Venta(pusuario, ppaquete, pvarios, ptotal)
         Dim con As MySqlConnection = conexiones.conection
-        Dim fecha As String = DateTime.Now.ToString("yyyy-MM-dd HH:mm")
-        Dim cmd As MySqlCommand = New MySqlCommand(String.Format("insert into ventas(usuario,paquete,fecha,total) values('" + pusuario + "','" + ppaquete + "','" + fecha + "', '" + ptotal + "') "), con)
+        Dim fecha As String = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+        Dim cmd As MySqlCommand = New MySqlCommand(String.Format("insert into ventas(usuario,paquete,varios,fecha,total) values('" + pusuario + "','" + ppaquete + "','" + pvarios + "','" + fecha + "', '" + ptotal + "') "), con)
         cmd.ExecuteNonQuery()
         con.Close()
     End Sub
@@ -105,6 +105,30 @@ Public Class conexiones
         Dim con As MySqlConnection = conexiones.conection
         Dim dt As New DataTable
         Dim cmd As MySqlCommand = New MySqlCommand(String.Format("Select * from ventas where fecha >='{0}' and fecha <='{1}'", fechaInicio, fechaFin), con)
+        Dim adap As New MySqlDataAdapter(cmd)
+        adap.Fill(dt)
+        con.Close()
+        Return dt
+    End Function
+    'Agregar Usuario
+    Public Shared Sub addUser(puser, ppass, plevel)
+        Dim con As MySqlConnection = conexiones.conection
+        Dim cmd As MySqlCommand = New MySqlCommand(String.Format("Insert into usuarios(user, password, level) values('" + puser + "', '" + ppass + "', '" + plevel + "')"), con)
+        cmd.ExecuteNonQuery()
+        con.Close()
+    End Sub
+    'Eliminar usuario
+    Public Shared Sub deleteUser(ppuser)
+        Dim con As MySqlConnection = conexiones.conection
+        Dim cmd As MySqlCommand = New MySqlCommand(String.Format("Delete from usuarios where user='" + ppuser + "'"), con)
+        cmd.ExecuteNonQuery()
+        con.Close()
+    End Sub
+    'Obtener Usuario
+    Public Shared Function getUser() As DataTable
+        Dim con As MySqlConnection = conexiones.conection
+        Dim dt As New DataTable
+        Dim cmd As MySqlCommand = New MySqlCommand(String.Format("Select user from usuarios"), con)
         Dim adap As New MySqlDataAdapter(cmd)
         adap.Fill(dt)
         con.Close()
